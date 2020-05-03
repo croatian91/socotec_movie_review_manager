@@ -2,6 +2,8 @@
 
 ##### SOCOTEC
 
+![Frontend](frontend/src/assets/capture_front.png)
+
 ### Installation
 
 > This project requires Docker installed and running
