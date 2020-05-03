@@ -1,0 +1,42 @@
+const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const nodeExternals = require('webpack-node-externals');
+
+module.exports = {
+  entry: './src/main.js',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'bundle.js'
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'public')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: ['vue-style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      }
+    ]
+  },
+  resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, 'src')
+    },
+    extensions: ['*', '.js', '.vue', '.json']
+  },
+  plugins: [new VueLoaderPlugin()],
+  externals: [nodeExternals()],
+  devtool: 'inline-cheap-module-source-map',
+  mode: 'development'
+};

@@ -24,3 +24,15 @@ $ docker-compose -f "docker-compose.yml" up -d --build
 - Frontend: [http://localhost:8080](http://localhost:8080)
 - Admin panel: [http://localhost:8000/admin/](http://localhost:8000/admin/)
 - Api: [http://localhost:8000/api/](http://localhost:8000/api/)
+
+### Testing (frontend directory)
+
+```sh
+$ yarn run test
+```
+
+or
+
+```sh
+$ npm run test
+```
