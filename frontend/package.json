@@ -9,7 +9,7 @@
     "test": "mochapack --webpack-config webpack.config.js --require test/setup.js src/store/**/*.spec.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.4.1",
     "bootstrap-vue": "^2.13.0",
     "chai": "^4.2.0",
